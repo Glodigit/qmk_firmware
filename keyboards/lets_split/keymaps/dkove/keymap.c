@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
+#define ONESHOT_TAP_TOGGLE
 
-
-//DkOuvE Default Keymap v0.1
+//DkOuvE Default Keymap v1.0
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -12,7 +12,7 @@
 #define _FUNCTION 4
 #define _PLOVER 10
 
-#define L1  OSM(_LVL1)
+#define L1  OSL(_LVL1)
 #define FN  MO(_FUNCTION)
 
 enum custom_keycodes {
@@ -113,19 +113,47 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 void matrix_init_user() {
-  steno_set_mode(STENO_MODE_GEMINI); // or STENO_MODE_BOLT
+    steno_set_mode(STENO_MODE_GEMINI); // or STENO_MODE_BOLT
+    rgblight_enable();
 }
+
+void matrix_scan_user(void) {
+  #ifdef RGBLIGHT_ENABLE
+
+  static uint8_t old_layer = 255;
+  uint8_t new_layer = biton32(layer_state);
+
+  if (old_layer != new_layer) {
+    switch (new_layer) {
+      case _QWERTY:
+        //rgblight_setrgb(0x22, 0x22, 0x22);
+        rgblight_enable(); //allows rgb brightness controls to work on layer
+        break;
+      case _FUNCTION:
+        rgblight_setrgb(0x00, 0x00, 0x22);
+        break;
+      case _LVL1:
+        rgblight_setrgb(0x22, 0x11, 0x00); //nice golden shade of yellow
+        break;
+      case _PLOVER:
+        rgblight_setrgb(0x22, 0x00, 0x22);
+        break;
+    }
+    
+    //one of the leds is slightly defective, so make that one black.
+    //other one is for symmetry
+    //rgblight_setrgb_at(0x00, 0x00, 0x00, 2);
+    //rgblight_setrgb_at(0x00, 0x00, 0x00, 31);
+      
+      
+    old_layer = new_layer;
+  }
+
+  #endif //RGBLIGHT_ENABLE
+};
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case LVL1:
-      if (record->event.pressed) {
-        //add backlight code here
-        //rgblight_setrgb(0x00, 0x00, 0xFF);
-      } else {
-        //turn off backlight
-        //rgblight_setrgb(0x00, 0x00, 0x00);
-      }
       return false;
       break;
     case PLOVER:
