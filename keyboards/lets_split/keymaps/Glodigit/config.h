@@ -24,7 +24,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 34 //5 + 7 + 5 on 3 sides of each case
-#define RGBLED_SPLIT {17, 17}
 #define RGBLIGHT_SLEEP
 #define RGBLIGHT_LIMIT_VAL 127 //Just so that I don't max out power useage.
 
