@@ -21,5 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 //#define ONESHOT_TAP_TOGGLE
 
+#define TAIPO_ENABLE
+#define TAIPO_FLAVOR_POSH
+
 #undef  DEBOUNCING_DELAY //gateron clears are too sensitive
 #define DEBOUNCING_DELAY 36
