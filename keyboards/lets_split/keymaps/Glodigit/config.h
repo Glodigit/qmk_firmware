@@ -19,15 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #pragma once
-
- // place overrides here
-#undef RGBLED_NUM
-#define RGBLIGHT_ANIMATIONS
-#define RGBLED_NUM 34 //5 + 7 + 5 on 3 sides of each case
-#define RGBLIGHT_SLEEP
-#define RGBLIGHT_LIMIT_VAL 127 //Just so that I don't max out power useage.
-
 //#define ONESHOT_TAP_TOGGLE
 
 #undef  DEBOUNCING_DELAY //gateron clears are too sensitive
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCING_DELAY 36

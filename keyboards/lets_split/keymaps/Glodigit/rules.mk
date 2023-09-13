@@ -1,4 +1,8 @@
-STENO_ENABLE = yes
+LTO_ENABLE = yes
+NKRO_ENABLE = yes
+RGBLIGHT_ENABLE = no
+UNICODE_ENABLE = no
 MOUSEKEY_ENABLE = no
-NKRO_ENABLE = yes            # Nkey Rollover
-RGBLIGHT_ENABLE = yes
+TAP_DANCE_ENABLE = no
+QMK_SETTINGS = no
+DEBOUNCE_TYPE = sym_defer_pk
