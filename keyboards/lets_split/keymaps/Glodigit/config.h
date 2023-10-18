@@ -32,10 +32,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEBOUNCING_DELAY 36
 
 // Taipo
-#define TAIPO_ENABLE
 #define TAIPO_FLAVOR_POSH
-#define TAIPO_TAP_TIMEOUT 150
-#define ONESHOT_TIMEOUT 500
+#define TAIPO_TAP_TIMEOUT 48
+#define ONESHOT_TIMEOUT 120
 
 #define FORCE_NKRO
 // Unicode

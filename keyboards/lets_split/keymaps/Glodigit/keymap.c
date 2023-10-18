@@ -1,13 +1,8 @@
 #include QMK_KEYBOARD_H
 #include "dlip.h"
 
+//Glodigit keymap for the AirBerries
 
-//Glodigit Keymap
-
-// Each layer gets a name for readability, which is then used in the keymap matrix below.
-// The underscores don't mean anything - you can have a layer called STUFF or any other name.
-// Layer names don't all need to be of the same length, obviously, and you can also skip them
-// entirely and just use numbers.
 #define _BASE     0
 #define _QWERTY   1
 #define _F360     2
@@ -92,20 +87,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Taipo Layer
  * ,------------------------------------------  ------------------------------------------.
- * |      |      |XXXXXX|XXXXXX|XXXXXX|XXXXXX|  |XXXXXX|XXXXXX|XXXXXX|XXXXXX| TAB  | ESC  |
+ * | ESC  | TAB  | —    | °    |XXXXXX|XXXXXX|  |XXXXXX|XXXXXX| °    | —    | TAB  | ESC  |
  * |------+------+------+------+------+------|  |------+------+------+------+------+------|
- * | TAIPO| TR   | TM   | TI   |XXXXXX|XXXXXX|  |XXXXXX|XXXXXX| TI   | TM   | TR   | TAIPO|
+ * | TAIPO| TR   | TM   | TI   | ≠    |XXXXXX|  |XXXXXX| ≠    | TI   | TM   | TR   | TAIPO|
  * |------+------+------+------+------+------|  |------+------+------+------+------+------|
- * | TP   | BR   | BM   | BI   |XXXXXX|XXXXXX|  |XXXXXX|XXXXXX| BI   | BM   | BR   | TP   |
+ * | TP   | BR   | BM   | BI   | ±    |XXXXXX|  |XXXXXX| ±    | BI   | BM   | BR   | TP   |
  * |------+------+------+------+------+------|  |------+------+------+------+------+------|
- * | LP   |XXXXXX|XXXXXX| IT   | OT   |      |  | FN   | IT   | OT   |XXXXXX|XXXXXX| LP   |
+ * | LP   |XXXXXX|XXXXXX| IT   | OT   | FN   |  | FN   | IT   | OT   |XXXXXX|XXXXXX| LP   |
  * `------------------------------------------  ------------------------------------------'
 */
 [_TAIPO] = LAYOUT_ortho_4x12( \
-     _______, _______,    XXXX,    XXXX,     XXXX,    XXXX,     XXXX, XXXX,   XXXX,   XXXX,   KC_TAB, KC_ESCAPE,  \
-  TG(_TAIPO),  TP_TLR,  TP_TLM,   TP_TLI,    XXXX,    XXXX,     XXXX, XXXX,   TP_TRI, TP_TRM, TP_TRR, TG(_TAIPO), \
-      TP_TLP,  TP_BLR,  TP_BLM,   TP_BLI,    XXXX,    XXXX,     XXXX, XXXX,   TP_BRI, TP_BRM, TP_BRR, TP_TRP,     \
-      TP_BLP,    KC_X,    XXXX,   TP_LIT,  TP_LOT, _______,     MO(_FN),   TP_ROT, TP_RIT, XXXX,   XXXX,   TP_BRP      \
+   KC_ESCAPE,  KC_TAB,  EMDASH,   DEGREE,  XXXX,     XXXX,        XXXX,     XXXX,     DEGREE, EMDASH, KC_TAB, KC_ESCAPE,  \
+  TG(_TAIPO),  TP_TLR,  TP_TLM,   TP_TLI,  NOTEQUAL, XXXX,        XXXX,     NOTEQUAL, TP_TRI, TP_TRM, TP_TRR, TG(_TAIPO), \
+      TP_TLP,  TP_BLR,  TP_BLM,   TP_BLI,  PLUSMIN,  XXXX,        XXXX,     PLUSMIN,  TP_BRI, TP_BRM, TP_BRR, TP_TRP,     \
+      TP_BLP,    KC_X,    XXXX,   TP_LIT,  TP_LOT,   MO(_FN),     MO(_FN),  TP_ROT,   TP_RIT, XXXX,   XXXX,   TP_BRP      \
 ),
 
 
@@ -134,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  |------+------+------+------+------+------|
  * | F360 | SNIP | F4   | F5   | F6   | F11  |  | (    | )    | ;    | :    | ODATE|PGDOWN|
  * |------+------+------+------+------+------|  |------+------+------+------+------+------|
- * | NLOCK| CLOCK| F1   | F2   | F3   | F12  |  | {    | }    |XXXXXX|XXXXXX| OTIME| -    |
+ * | NLOCK| CLOCK| F1   | F2   | F3   | F12  |  | {    | }    |QWERTY|XXXXXX| OTIME| -    |
  * |------+------+------+------+------+------|  |------+------+------+------+------+------|
  * |      |      |      |      | NUM  |      |  |      |      | HOME | END  |      |      |
  * `------------------------------------------  ------------------------------------------'
@@ -142,7 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_FN] = LAYOUT_ortho_4x12( \
       QK_BOOT,      KC_PSCR,   KC_F7,   KC_F8,   KC_F9,  KC_F10,     KC_LBRC, KC_RBRC, LGUI(KC_GRAVE), KC_NONUS_HASH, _______, KC_PGUP,  \
     TG(_F360),     SNIPASTE,   KC_F4,   KC_F5,   KC_F6,  KC_F11,     KC_LPRN, KC_RPRN, KC_SCLN,        KC_COLN,       O_DATE,  KC_PGDN,  \
-  KC_NUM_LOCK, KC_CAPS_LOCK,   KC_F1,   KC_F2,   KC_F3,  KC_F12,     KC_LCBR, KC_RCBR, XXXX,           XXXX,          O_TIME,  KC_MINUS, \
+  KC_NUM_LOCK, KC_CAPS_LOCK,   KC_F1,   KC_F2,   KC_F3,  KC_F12,     KC_LCBR, KC_RCBR, TG(_QWERTY),    XXXX,          O_TIME,  KC_MINUS, \
       _______,      _______, _______, _______, _______, _______,     _______, _______, KC_HOME,        KC_END,        _______, _______   \
 ),
 
