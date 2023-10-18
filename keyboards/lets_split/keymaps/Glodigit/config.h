@@ -19,10 +19,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #pragma once
-//#define ONESHOT_TAP_TOGGLE
 
+// RGB
+//#define RGBLIGHT_ANIMATIONS
+#undef RGBLED_NUM
+#define RGBLED_NUM 34 //5 + 7 + 5 on 3 sides of each case
+#define RGBLIGHT_SLEEP
+#define RGBLIGHT_LIMIT_VAL 127 //Just so that I don't max out power useage.
+
+// Debounce
+#undef  DEBOUNCING_DELAY //gateron clears are too sensitive
+#define DEBOUNCING_DELAY 36
+
+// Taipo
 #define TAIPO_ENABLE
 #define TAIPO_FLAVOR_POSH
 
-#undef  DEBOUNCING_DELAY //gateron clears are too sensitive
-#define DEBOUNCING_DELAY 36
+// Unicode
+#define UNICODE_SELECTED_MODES UNICODE_MODE_WINDOWS
