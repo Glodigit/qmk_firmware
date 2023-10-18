@@ -1,21 +1,20 @@
-# Chouchou
+# mushi
 
-![Chouchou](https://i.imgur.com/BYk2n5Ch.jpeg)
+![mushi](imgur.com image replace me!)
 
-Chouchou (Japanese for butterfly) is a minimalist unibody keyboard designed to be used with the [Taipo](https://inkeys.wiki/en/keymaps/taipo) layout.
+*A short description of the keyboard/project*
 
-- [Github repo](https://github.com/dlip/chouchou)
-- Keyboard Maintainer: [Dane Lipscombe](https://github.com/dlip)
+* Keyboard Maintainer: [Dane Lipscombe](https://github.com/dlip)
+* Hardware Supported: *The PCBs, controllers supported*
+* Hardware Availability: *Links to where you can find this hardware*
 
 Make example for this keyboard (after setting up your build environment):
 
-Note: The default layout is mainly for testing. You can change 'default' to 'dlip' for a fully featured layout. 
-
-    make chouchou:default
+    make mushi:default
 
 Flashing example for this keyboard:
 
-    make chouchou:default:flash
+    make mushi:default:flash
 
 See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
 
