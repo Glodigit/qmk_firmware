@@ -33,8 +33,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Taipo
 #define TAIPO_FLAVOR_POSH
-#define TAIPO_TAP_TIMEOUT 60
-#define ONESHOT_TIMEOUT 120
+#define TAIPO_TAP_TIMEOUT 108
+#define ONESHOT_TIMEOUT 600
 
 #define FORCE_NKRO
 // Unicode
