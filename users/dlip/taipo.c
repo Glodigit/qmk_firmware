@@ -388,7 +388,8 @@ static uint16_t determine_key(uint16_t val) {
 #elif defined(TAIPO_FLAVOR_POSH)
 #define it 1 << 8
 #define ot 1 << 9
-#define both ot | it
+//#define both ot | it
+#define both 1 << 4
 #define e 1 << 7
 #define t 1 << 6
 #define a 1 << 1
