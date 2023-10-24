@@ -93,14 +93,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  |------+------+------+------+------+------|
  * | TP   | BR   | BM   | BI   |XXXXXX|XXXXXX|  |XXXXXX|XXXXXX| BI   | BM   | BR   | TP   |
  * |------+------+------+------+------+------|  |------+------+------+------+------+------|
- * |XXXXXX|XXXXXX| IT   | 0T   | lP   | FN   |  | FN   | LP   | OT   | IT   |XXXXXX|XXXXXX|
+ * |XXXXXX|XXXXXX| lP   | IT   | OT   | FN   |  | FN   | OT   | IT   | LP   |XXXXXX|XXXXXX|
  * `------------------------------------------  ------------------------------------------'
 */
 [_TAIPO] = LAYOUT_ortho_4x12( \
    KC_ESCAPE, KC_TAB,   XXXX,   XXXX,   XXXX,    XXXX,     XXXX,     XXXX,   XXXX,   XXXX,   KC_TAB, KC_ESCAPE,  \
   TG(_TAIPO), TP_TLR, TP_TLM, TP_TLI,   XXXX,    XXXX,     XXXX,     XXXX,   TP_TRI, TP_TRM, TP_TRR, TG(_TAIPO), \
       TP_TLP, TP_BLR, TP_BLM, TP_BLI,   XXXX,    XXXX,     XXXX,     XXXX,   TP_BRI, TP_BRM, TP_BRR, TP_TRP,     \
-        XXXX,   XXXX, TP_LIT, TP_LOT, TP_BLP, MO(_FN),     MO(_FN),  TP_BRP, TP_ROT, TP_RIT, XXXX,   XXXX      \
+        XXXX,   XXXX, TP_BLP, TP_LIT, TP_LOT, MO(_FN),     MO(_FN),  TP_ROT, TP_RIT, TP_BRP, XXXX,   XXXX      \
 ),
 
 
